@@ -5,6 +5,30 @@ app = Flask(__name__)
 
 # Diccionario de sinónimos
 sinonimos = {
+    "mojado": "húmedo",
+    "seco": "árido",
+    "viejo": "antiguo",
+    "joven": "juvenil",
+    "nuevo": "moderno",
+    "antiguo": "veterano",
+    "cansado": "agotado",
+    "descansado": "repuesto",
+    "rápido": "presto",
+    "despacio": "lento",
+    "diligente": "laborioso",
+    "delgado": "esbelto",
+    "inteligente": "listo",
+    "tonto": "necio",
+    "difícil": "complicado",
+    "fuerte": "robusto",
+    "débil": "fragil",
+    "rápido": "expedito",
+    "lento": "pausado",
+    "brillante": "luminoso",
+    "oscuro": "tenebroso",
+    "caliente": "ardiente",
+    "frío": "helado",
+    "cálido": "templado",
     "fácil": "sencillo",
     "morir": "fallecer",
     "rápido": "veloz",
@@ -20,31 +44,7 @@ sinonimos = {
     "alto": "elevado",
     "bajo": "reducido",
     "gordo": "obeso",
-    "delgado": "esbelto",
-    "inteligente": "listo",
-    "tonto": "necio",
-    "difícil": "complicado",
-    "fuerte": "robusto",
-    "débil": "fragil",
-    "rápido": "expedito",
-    "lento": "pausado",
-    "brillante": "luminoso",
-    "oscuro": "tenebroso",
-    "caliente": "ardiente",
-    "frío": "helado",
-    "cálido": "templado",
     "helado": "gélido",
-    "mojado": "húmedo",
-    "seco": "árido",
-    "viejo": "antiguo",
-    "joven": "juvenil",
-    "nuevo": "moderno",
-    "antiguo": "veterano",
-    "cansado": "agotado",
-    "descansado": "repuesto",
-    "rápido": "presto",
-    "despacio": "lento",
-    "diligente": "laborioso",
     "perezoso": "haragán",
     "rico": "opulento",
     "pobre": "necesitado",
@@ -105,7 +105,7 @@ sinonimos = {
 }
 
 # Diccionario de operadores
-operadores = {
+operador = {
     '+': 'operador suma',
     '-': 'operador resta',
     '*': 'operador multiplicación',
@@ -139,8 +139,8 @@ def analyze():
             if word_lower in sinonimos:
                 output_line.append(sinonimos[word_lower])
                 changed_words.append('x')
-            elif word in operadores:
-                output_line.append(operadores[word])
+            elif word in operador:
+                output_line.append(operador[word])
                 changed_words.append('')
                 has_symbol = True
             elif re.match(r'^\d+$', word):
